@@ -1,0 +1,23 @@
+ pattern
+
+Introduction
+
+The Adapter Pattern is a structural design pattern that is used to bridge the gap between two incompatible interfaces. It is used to convert the interface of one class into another interface that the client expects. This pattern is widely used in software development and it is one of the most popular design patterns used in the industry.
+
+Background
+
+The Adapter Pattern was first introduced by Gamma, Helm, Johnson and Vlissides in their book “Design Patterns: Elements of Reusable Object-Oriented Software” in 1994. The pattern is also known as the Wrapper Pattern or the Translator Pattern. It is used to convert the interface of a class into another interface that the client expects. This is done by creating an adapter class that wraps the original class and provides the expected interface.
+
+The Adapter Pattern is used to bridge the gap between two incompatible interfaces. This is often necessary when two classes have different interfaces and they need to communicate with each other. The Adapter Pattern allows the two classes to communicate without having to modify either of them.
+
+Application
+
+The Adapter Pattern is used in a variety of applications. It is often used to convert the interface of a class into another interface that the client expects. This is often necessary when two classes have different interfaces and they need to communicate with each other. The Adapter Pattern allows the two classes to communicate without having to modify either of them.
+
+The Adapter Pattern is also used to wrap legacy code and provide a new interface. This is often necessary when old code needs to be integrated with new code. The Adapter Pattern allows the old code to be wrapped and a new interface to be provided.
+
+The Adapter Pattern is also used to create a unified interface for a group of classes. This is often necessary when a group of classes need to provide a unified interface to the client. The Adapter Pattern allows the group of classes to be wrapped and a unified interface to be provided.
+
+Conclusion
+
+The Adapter Pattern is a structural design pattern that is used to bridge the gap between two incompatible interfaces. It is used to convert the interface of one class into another interface that the client expects. This pattern is widely used in software development and it is one of the most popular design patterns used in the industry. The Adapter Pattern is used in a variety of applications and it is a powerful tool for creating flexible and maintainable code.
