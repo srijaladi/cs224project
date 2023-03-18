@@ -1,0 +1,15 @@
+
+
+Authorization is a process of granting access rights to an individual or a group of individuals to use a particular service, system, or application. It is a critical component of an organization’s security system as it helps to ensure that only authorized individuals are able to access sensitive information or resources. Authorization is typically managed through the use of user accounts, passwords, and other security measures such as two-factor authentication.
+
+There are two main types of authorization: discretionary and mandatory. Discretionary authorization is when an individual is granted access to a system or resource based on their own decision. Mandatory authorization, on the other hand, requires an individual to be granted access by an authorized individual or system.
+
+In order to properly authorize individuals, organizations must first identify who is authorized to access a particular system or resource. This can be done through the use of user accounts, passwords, and other authentication measures. Once the individual is identified, organizations must then determine the level of access they should be granted. This is done by assigning access rights to the individual or group. Access rights determine what type of access the individual or group has to the system or resource.
+
+Once access rights are assigned, organizations must then ensure that the individual or group is only able to access the system or resource in accordance with their access rights. This can be done through the use of authorization policies, which are rules that define the types of activities that are allowed or prohibited by the user. Authorization policies can be used to limit access to certain resources, restrict the types of activities that can be performed, or even limit the amount of time an individual can access the system.
+
+In addition to authorization policies, organizations must also ensure that the user is not able to bypass the authorization process. This can be done through the use of encryption, which is a process of encoding data so that it can only be accessed by authorized individuals. Encryption is used to protect data from unauthorized access, and can be used to protect both the user and the system from malicious attacks.
+
+Finally, organizations must also ensure that the user is able to keep their access rights up to date. This can be done through the use of periodic reviews, which are conducted to ensure that the user is still authorized to access the system or resource. Organizations must also ensure that any changes made to the user’s access rights are properly documented and tracked.
+
+In summary, authorization is an important component of an organization’s security system. It helps to ensure that only authorized individuals are able to access sensitive information or resources. Authorization is typically managed through the use of user accounts, passwords, and other security measures such as two-factor authentication. Organizations must also ensure that the user is not able to bypass the authorization process, and that their access rights are kept up to date.

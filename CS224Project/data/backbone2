@@ -1,0 +1,11 @@
+
+
+Backbone is a JavaScript library that is used to create single page web applications. It is designed to give developers a structure for their code and provide them with the tools to create rich user interfaces. It is a lightweight library that is easy to learn and use.
+
+Backbone is based on the Model-View-Controller (MVC) design pattern. The Model is responsible for data and logic, the View is responsible for the user interface, and the Controller is responsible for controlling the application flow. Backbone provides the structure for the Model, View, and Controller, allowing developers to quickly and easily create single page web applications.
+
+Backbone is built on top of the jQuery library. This allows developers to use the familiar jQuery syntax to create rich user interfaces. Backbone also provides a set of tools for creating RESTful web services. This allows developers to easily communicate with the server and retrieve data from the server.
+
+Backbone is designed to be easy to use and understand. It provides a simple structure for writing code and is designed to be lightweight and fast. Backbone is also designed to be modular, allowing developers to easily extend the library and create custom applications.
+
+Backbone is an excellent choice for creating single page web applications. It is easy to learn and use, and provides a simple structure for writing code. It is lightweight and fast, and provides a set of tools for creating RESTful web services. It is also designed to be modular, allowing developers to easily extend the library and create custom applications. With its simple structure, powerful tools, and modular design, Backbone is an excellent choice for creating single page web applications.

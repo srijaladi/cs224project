@@ -1,0 +1,19 @@
+wise operators
+
+Bitwise operators are a type of operator used in computer programming to manipulate binary values. They are used to perform operations on bits and bytes, which are the smallest units of data in computing. Bitwise operators can be used to perform a wide range of tasks, from basic arithmetic operations to more complex operations such as bit shifting and masking.
+
+In order to understand how bitwise operators work, it is important to understand the basic structure of binary data. Binary data is composed of two digits, 0 and 1, which represent the two states of a single bit. A byte is composed of eight bits, and each bit can have one of two values, 0 or 1.
+
+Bitwise operators are used to perform operations on binary data. The most common bitwise operator is the AND operator, which is used to combine two binary values. The result of the AND operator is a single binary value, either 0 or 1. For example, if two binary values are ANDed together, the result is 1 if both values are 1, and 0 if either of them is 0.
+
+The OR operator is another common bitwise operator. This operator is used to combine two binary values and the result is 1 if either of the two values is 1, and 0 if both of them are 0.
+
+The XOR operator is another bitwise operator that is used to compare two binary values. The result of the XOR operator is 1 if the two values are different, and 0 if they are the same.
+
+The NOT operator is a unary operator that is used to invert the value of a single bit. This operator is often used to convert a binary value into its opposite. For example, if a bit is 0, the NOT operator will convert it to 1, and if it is 1, the NOT operator will convert it to 0.
+
+The bitwise shift operators are used to shift the bits in a binary value. The left shift operator shifts the bits to the left, while the right shift operator shifts the bits to the right. These operators are often used to perform arithmetic operations, such as multiplication and division.
+
+Finally, the bitwise masking operators are used to mask certain bits in a binary value. The AND masking operator sets certain bits to 0, while the OR masking operator sets certain bits to 1. These operators are often used to isolate certain bits in a binary value.
+
+In conclusion, bitwise operators are an important tool used in computer programming to manipulate binary values. They are used to perform basic arithmetic operations, as well as more complex operations such as bit shifting and masking. Understanding how bitwise operators work can help programmers write more efficient and effective code.

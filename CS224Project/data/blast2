@@ -1,0 +1,11 @@
+
+
+Blast, or Basic Local Alignment Search Tool, is a powerful computer program that helps scientists find regions of similarity between two or more biological sequences. It is a tool used in bioinformatics to compare two or more sequences of DNA, RNA, or proteins, and to identify similarities between them. The program was developed by Stephen Altschul, Warren Gish, Webb Miller, Eugene Myers, and David J. Lipman in 1990, and has since become the most widely used sequence comparison algorithm in the field of bioinformatics.
+
+Blast is used to identify similarities between two or more biological sequences, such as those of a gene, a protein, or a whole genome. The program works by comparing the sequences to each other, and then calculating the degree of similarity. By doing this, it can identify regions of similarity between the sequences, which can then be used to infer evolutionary relationships between them.
+
+The program works by taking a query sequence and searching it against a database of known sequences. It then identifies regions of similarity between the query and the database sequences, and calculates the degree of similarity. The results are then presented in a graphical format, which can be used to identify the regions of similarity between the two sequences.
+
+Blast is an important tool for scientists in the field of bioinformatics. It is used to identify similarities between two or more biological sequences, which can then be used to infer evolutionary relationships between them. It is also used to identify potential targets for drug development, and to study the structure and function of proteins. In addition, Blast is also used to compare gene sequences in order to identify genetic variants, and to compare whole genomes in order to identify genetic differences between species.
+
+Blast is a powerful and versatile tool, and is used in many different areas of bioinformatics. It is an invaluable tool for scientists in the field of bioinformatics, and is used to identify similarities between two or more biological sequences, and to infer evolutionary relationships between them.

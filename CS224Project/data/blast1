@@ -1,0 +1,13 @@
+
+
+Blast (Basic Local Alignment Search Tool) is a powerful computer algorithm used to search and compare sequence databases for similar sequences. It was developed by Stephen Altschul, Warren Gish, Webb Miller, Eugene Myers and David J. Lipman in 1990 and is widely used in bioinformatics.
+
+Blast is used to search for similar sequences in a given database. It works by taking a query sequence and comparing it to all the other sequences in the database. It then scores the similarity between the query and each sequence in the database and identifies the most similar sequences.
+
+Blast is an important tool in bioinformatics because it can be used to compare sequences from different species. This can help scientists to identify conserved regions of DNA, which can provide insights into the evolution of different species. Blast can also be used to identify genes that are similar between species, which can help scientists to understand how different organisms are related.
+
+Blast is also useful for identifying proteins that are similar between species. This can be used to infer the function of proteins and to identify potential drug targets. By comparing proteins between species, scientists can also gain insights into how proteins evolve and how they are related.
+
+Blast is also used in the field of genomics. It can be used to compare the genomes of different species and to identify regions of similarity. This can help scientists to identify genes that are shared between species and to understand how different organisms are related.
+
+Blast is a powerful tool that has revolutionized the field of bioinformatics. It has enabled scientists to make new discoveries and to gain insights into the evolution of different species. It has also been used to identify potential drug targets and to gain insights into how proteins evolve. Blast is an invaluable tool for the scientific community and will continue to be used for many years to come.
