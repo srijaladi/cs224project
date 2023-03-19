@@ -19,14 +19,17 @@ from torch.utils.data import Dataset, DataLoader
 TRAIN_VALID_SPLIT = 0.7
 BASE_MODEL_NAME = 'bert-base-uncased'
 FT_MODEL_NAME = "distilbert-base-uncased"
+MODEL_ENGINE = "text-davinci-003"
 RANK_CUTTOFF = 25
 NUM_MASK = 3
-EARLY_STOP = 10
+EARLY_STOP = 100
 
 BASE_MODEL = AutoModelForCausalLM.from_pretrained(BASE_MODEL_NAME)
-FT_MODEL = TFAutoModelForMaskedLM.from_pretrained(FT_MODEL_NAME)
+FT_MODEL = AutoModelForMaskedLM.from_pretrained(FT_MODEL_NAME)
 BASE_TOKENIZER = AutoTokenizer.from_pretrained(BASE_MODEL_NAME)
 FT_TOKENIZER = AutoTokenizer.from_pretrained(FT_MODEL_NAME)
+
+recorded_losses = []
 
 def get_preprocessed_data ():
   all_train_sents = []
@@ -38,7 +41,6 @@ def get_preprocessed_data ():
   np.random.seed(123)
   np.random.shuffle(all_train_sents)
   split_idx = int(TRAIN_VALID_SPLIT * len(all_train_sents))
-  split_idx = 5
   training_data = all_train_sents[:split_idx]
   validation_data = all_train_sents[split_idx:]
   return training_data, validation_data
@@ -67,7 +69,6 @@ def similarity_score_single(sentence1, sentence2):
     return numerator/denominator
 
 def sentence_coherence_score_single(input_sentence):
-    return 0.5
     modified_prompt = "Evaluate the coherence score of this sentence as a value between 0 and 1:\n\n" + input_sentence
     response = openai.Completion.create(
       model=MODEL_ENGINE,
@@ -80,6 +81,27 @@ def sentence_coherence_score_single(input_sentence):
     )
     res = response.choices[0]['text'].strip()
     return float(res)
+
+def embedding_coherence_score_single (embedding):
+  return 1
+  new_sentence = FT_TOKENIZER.decode(embedding)
+  return sentence_coherence_score_single(new_sentence)
+
+def model_score_calc (inputs, token_logits):
+  batch_size = len (token_logits)
+  average_coherence = 0
+  average_perplexity = 0
+  for i in range (batch_size):
+    mask_token_index = np.argwhere(inputs["input_ids"] == FT_TOKENIZER.mask_token_id)[0, 1]
+    mask_token_logits = token_logits[i, mask_token_index, :]
+    top_token = torch.argsort(-mask_token_logits)[0]
+    embedding_copy = torch.clone(inputs['input_ids'][i])    
+    embedding_copy[mask_token_index] = top_token
+    average_coherence += embedding_coherence_score_single (embedding_copy)
+    average_perplexity += compute_perplexity(embedding_copy)[0].item()
+  average_coherence /= batch_size
+  average_perplexity /= batch_size
+  return average_coherence, average_perplexity
 
 def get_prob(model, encoded_sentence, tf= False):    
     isGPT = BASE_MODEL_NAME[:4] == 'gpt2'
@@ -115,7 +137,7 @@ def get_prob(model, encoded_sentence, tf= False):
     
     return total_log_prob, all_probs
 
-# REMOVE STOP WORDS + CLS THINGS
+# REMOVE STOP WORDS
 def compute_perplexity(encoded_sentence, tf = False):
     base_log_prob, base_each_prob = get_prob(BASE_MODEL, encoded_sentence, tf = tf)
     # print(base_log_prob)
@@ -157,20 +179,17 @@ def get_most_similar_token (tokens, original_encoding, index):
         top_token = token
    return top_token
 
-class FinetunedBartTrainer(TFTrainer):
+class FinetunedBartTrainer(Trainer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
     def compute_loss(self, model, inputs):
-      cross_entropy_loss, logits = model(
-                input_ids=inputs["input_ids"],
-                labels=inputs["labels"],
-                attention_mask=inputs["attention_mask"]
-        )
-      for single_logits in logits:
-        continue
-       
-      return cross_entropy_loss
-class BERTDataset(Dataset):
+      token_logits = model(**inputs).logits
+      cross_entropy_loss = model(**inputs).loss
+      coherence, perplexity = model_score_calc (inputs, token_logits)
+      bias = 10 * (1.5 - coherence) * np.exp(-perplexity/200)
+      recorded_losses.append(bias * cross_entropy_loss.item())
+      return bias * cross_entropy_loss
+class TFBERTDataset(Dataset):
   def __init__(self, encodings, labels):
       self.encodings = encodings
       self.labels = labels
@@ -180,9 +199,18 @@ class BERTDataset(Dataset):
       item = {key: tf.Tensor(val[idx]) for key, val in self.encodings.items()}
       item['labels'] = tf.Tensor(self.labels[idx])
       return item
+
+class BERTDataset(Dataset):
+  def __init__(self, encodings):
+      self.encodings = encodings
+  def __len__(self):
+      return len(self.encodings.input_ids)
+  def __getitem__(self, idx):
+      item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+      return item
     
 def prep_data_set (training_data):
-  dataset_train =  FT_TOKENIZER (training_data, return_tensors="np")
+  dataset_train =  FT_TOKENIZER (training_data, return_tensors="pt", padding=True)
   dataset_train["labels"] = np.copy(dataset_train["input_ids"])
 
   # mask lowest perplexity token
@@ -190,28 +218,28 @@ def prep_data_set (training_data):
     base_encoding = BASE_TOKENIZER (training_data[i], return_tensors = 'pt')['input_ids']
     mask_idx = get_mask_indicies (base_encoding[0])[0]
     encoding[mask_idx] = FT_TOKENIZER.mask_token_id
-  return BERTDataset(dataset_train["input_ids"], dataset_train["labels"])
+  return BERTDataset(dataset_train)
 
 def fine_tune (model, training_data):
   inputs = prep_data_set (training_data)
   print (inputs)
    
-  training_args = TFTrainingArguments(
-        output_dir="test_trainer", 
-        evaluation_strategy="epoch",
+  training_args = TrainingArguments(
+        output_dir="test_trainer",
         num_train_epochs = 3,
         gradient_accumulation_steps = 1,
         per_device_train_batch_size = 8,
         learning_rate = 5e-5,
         logging_steps = 400
     )
-   
+  
   trainer = FinetunedBartTrainer(
     model=model,
     args=training_args,
     train_dataset=inputs
    )
   trainer.train()
+  trainer.save_model("./fine-tuned-model")
   
 
 if __name__ == "__main__":
@@ -221,12 +249,22 @@ if __name__ == "__main__":
   # BEGIN FINE TUNING
   fine_tune (FT_MODEL, training_data)
 
-  old_new_dict = {}
+  y = -np.array(recorded_losses)
+  x = range (1, len(recorded_losses) + 1)
+  plt.scatter(x, y)
 
+  plt.title("Loss values for BERT Fine-Tuning over batches")
+  plt.xlabel("Training Batch Number")
+  plt.ylabel("Custom loss Value")
+
+  plt.savefig('fine_tuning_loss_graph.png')
+
+  old_new_dict = {}
+  print ("BEGINGING EVAL\n")
   for index, sentence in enumerate(validation_data):
     encoding = BASE_TOKENIZER (sentence, return_tensors = 'pt')['input_ids']
     mask_indicies = get_mask_indicies (encoding[0])
-    inputs = FT_TOKENIZER (sentence, return_tensors="np")
+    inputs = FT_TOKENIZER (sentence, return_tensors="pt")
     new_sentence = "" + sentence
     for i in range (NUM_MASK):
       if (i >= len(mask_indicies) or mask_indicies[i] >= len(inputs['input_ids'][0])):
@@ -235,7 +273,7 @@ if __name__ == "__main__":
       token_logits = FT_MODEL(**inputs).logits
       mask_token_index = mask_indicies[i]
       mask_token_logits = token_logits[0, mask_token_index, :]
-      top_tokens = np.argsort(-mask_token_logits)[:RANK_CUTTOFF].tolist()
+      top_tokens = torch.argsort(-mask_token_logits)[:RANK_CUTTOFF].tolist()
       top_token = get_most_similar_token (top_tokens, inputs['input_ids'][0], mask_indicies[i])
       inputs['input_ids'][0][mask_indicies[i]] = top_token
       new_sentence = FT_TOKENIZER.decode(inputs['input_ids'][0])
@@ -243,7 +281,7 @@ if __name__ == "__main__":
       print(f"original:{sentence}\nmodified: {new_sentence}\n", file=f)
 
     old_new_dict [sentence] = new_sentence
-    if index >= EARLY_STOP:
-      break
-  # with open('fine_tuned_sentences.txt', 'w') as f:
-  #   print(old_new_dict, file=f)
+    # if index >= EARLY_STOP:
+    #   break
+  print ("ENDING EVAL\n")
+  print (old_new_dict)

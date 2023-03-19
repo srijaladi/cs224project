@@ -1,0 +1,303 @@
+original:Descriptive adjectives are used to describe a noun or pronoun.
+modified: [CLS] nowadays screenplays are used to describe a tributary or pronoun. [SEP]
+
+original:An analyst must also be able to work with a variety of people.
+modified: [CLS] radioesthesia must also be available to work with a variety of people. [SEP]
+
+original:Apologies should be made out of genuine remorse and a desire to make amends.
+modified: [CLS] recommendations should be made out of genuine remorse and contestants desire constantly make amends. [SEP]
+
+original:It is important to remember that advocacy is only effective when it is combined with other strategies, such as direct action, lobbying, and grassroots organizing.
+modified: [CLS] it is valuable to remember that regulation is only constructive when it is combined with other strategies, such as direct action, lobbying, and grassroots organizing. [SEP]
+
+original:Once you’ve identified the keywords you want to target, you need to optimize your website for those keywords.
+modified: [CLS] believingrial ^ ve identified the keywords you want to target, you need to optimize your website for those keywords. [SEP]
+
+original:Approval is also important in our personal lives.
+modified: [CLS] philanthropy is substantially helpful in our personal lives. [SEP]
+
+original:The novel, “The Great Gatsby” by F.
+modified: [CLS] celebrity novel, features the great gatsby followed by f. [SEP]
+
+original:Not only do they provide comfort and support, but they also add a touch of style and sophistication to any space.
+modified: [CLS] not uniformly do they provide [unused32] and [unused467], but they also add a touch of style and sophistication to any space. [SEP]
+
+original:The Beatles began their career as a rock and roll band playing in small clubs in Liverpool and Hamburg.
+modified: [CLS] dixie boys began their career as a rock and roll band playing in small clubs in liverpool and norwich. [SEP]
+
+original:Baggies are a great way to stay comfortable and look stylish at the same time.
+modified: [CLS] agits are a great way to stay comfortable and look stylika at the same time. [SEP]
+
+original:Abundance is a state of being that allows for the possibility of abundance in the form of relationships, where there is an abundance of love and support.
+modified: [CLS] compromise is a state of being that stands for the end of abundance in the form of relationships, where there is an abundance of love and support. [SEP]
+
+original:When it comes to using blame effectively, it is important to consider the context of the situation.
+modified: [CLS] instead it comes to using [unused188]gies, it is important to consider the context of the situation. [SEP]
+
+original:Regardless of the cause, accidents can have serious physical, emotional, and financial impacts on those involved.
+modified: [CLS] upstream of the press, accidents can have suspended physical, emotional, and financial impacts on those involved. [SEP]
+
+original:In a human context, the alpha individual is often seen as the most successful and influential person in a group or organization.
+modified: [CLS] reflecting a colonial context, the alpha sheet is often seen as the most successful and influential person in a group or organization. [SEP]
+
+original:It has made our lives easier in many ways, but it also has its drawbacks.
+modified: [CLS] it reportedly made our lives choices in many ways, but it also has its draw share. [SEP]
+
+original:This results in the lack of pigment in the skin, hair, and eyes, and can cause vision problems, hearing loss, and other health complications.
+modified: [CLS] diagnosis arises in the lack of awareness in the skin, hair, and eyes, and can cause vision problems, hearing loss, and other health complications. [SEP]
+
+original:It is about having the courage to take risks and to believe in one’s own potential.
+modified: [CLS] it is about attaining the courage to take risks and to believe in one \ s own settlements. [SEP]
+
+original:It is also used in the production of aircraft and spacecraft, due to its ability to withstand extreme temperatures and its low weight.
+modified: [CLS] it is successively used in the production of aircraft and spacecraft, corresponding to its ability to withstand supper temperatures and its low weight. [SEP]
+
+original:Automation has brought about many benefits, such as increased productivity, improved safety, and cost savings.
+modified: [CLS] alcohol has testified about many benefits, expressed as increased productivity, improved safety, and cost savings. [SEP]
+
+original:Bandwidth is a critical factor in determining the performance of a network.
+modified: [CLS]xing is a procedural factor in documenting the performance of a network. [SEP]
+
+original:It was not until the 19th century that the bassoon became a solo instrument, with composers such as Mozart and Beethoven writing solo works for the instrument.
+modified: [CLS] it was not until the 22nd century that the bassoon became a solo instrument, with composers [PAD] as mozart and [unused935] writing solo works for the instrument. [SEP]
+
+original:Bias can also lead to a lack of diversity in the workplace, which can lead to a lack of creativity and innovation.
+modified: [CLS] internment can nearly lead to a lack of interference in the workplace, which can lead to a lack of creativity and innovation. [SEP]
+
+original:In many countries, amnesty is granted to political prisoners who have been wrongfully imprisoned.
+modified: [CLS] besides many countries, access is granted to political prisoners who have been wrongbed imprisoned. [SEP]
+
+original:The airline industry has seen tremendous growth over the past century and is expected to continue to grow in the future.
+modified: [CLS] croatian biomedical architecture has seen tremendous growth over the past century and is expected to continue to grow in the future. [SEP]
+
+original:They are the dominant group of plants in almost all terrestrial ecosystems, and are found in a wide variety of habitats, ranging from deserts to rainforests.
+modified: [CLS] tomatoes are the dominant group of plants in almost all terrestrial ecosystems, and are used in a wide variety of habitats, ranging from wetlands to rainforests. [SEP]
+
+original:It is also limited by the speed at which it can search and compare sequences.
+modified: [CLS] it is readily augmented by the speed at which it can search and compare [unused671]. [SEP]
+
+original:They can pursue their own hobbies and interests, or they can focus on their career.
+modified: [CLS] canadians can pursue their own hoony and interests, or they progressively focus on their career. [SEP]
+
+original:The world of literature is filled with many authors that have left an indelible mark on the world of literature.
+modified: [CLS] spartan study of literature is filled with many authors that have left an indubble mark on the world of literature. [SEP]
+
+original:Beef is also a good source of healthy fats, including omega-3 fatty acids.
+modified: [CLS]orescence is also a good consumer of healthy fats, including omega - 3 fattytors. [SEP]
+
+original:This pressure is then used to predict changes in the weather.
+modified: [CLS] abdominal pressure is then employed may predict changes in the weather. [SEP]
+
+original:With the right armrest, the user can enjoy a comfortable and ergonomic seating experience.
+modified: [CLS] lacking the right armrest, the builders can enjoy a comfortable and ergoncies seating experience. [SEP]
+
+original:This exploration of identity is further explored through the other characters on the show, such as Felicity and Thea, who must also grapple with their own identities.
+modified: [CLS] additionally exploration of identity is furthereded through the other characters on the show, such as felicity and thea, who must confront grapple with their own identities. [SEP]
+
+original:It is typically written by the person themselves, and must be witnessed and signed by two other people in order for it to be legally binding.
+modified: [CLS] it is typically written by the person themselves, and must be paired and signed by two other judges amidst order for it to be legally binding. [SEP]
+
+original:The bird should be able to move around comfortably, and there should be enough space for the bird to spread its wings.
+modified: [CLS] indicatesties should be able to move around nationally, and there should be enough space for the bird to spread its wings. [SEP]
+
+original:Anteaters are also known to eat other insects, such as beetles, caterpillars, and wasps.
+modified: [CLS]sheaters are also known to eat other insects, such as beetles, groundspigers, and wasps. [SEP]
+
+original:Living trusts are legal documents that allow a person to transfer their assets to a trust while they are still alive.
+modified: [CLS] residual seals are legal traps that allow a person to transfer their assets to a trust while they are still alive. [SEP]
+
+original:Today, bicycles come in a variety of shapes, sizes, and materials.
+modified: [CLS] nowadays, flutes come in a variety of mixes, sizes, and materials. [SEP]
+
+original:It adds a finished look to the room, and can be used to create a sense of continuity throughout the house.
+modified: [CLS] it exhibits a mixed look to the room, and can be shown to create a sense of continuity throughout the house. [SEP]
+
+original:The court will review the case and may overturn the original conviction.
+modified: [CLS] his court will review the case and may overplay the original ingredient. [SEP]
+
+original:The antelope is an amazing and diverse species.
+modified: [CLS] indonesian beeselops is an amazing and diverse species. [SEP]
+
+original:The tugboat is then able to pull the barge along, and the barge is able to move with the current of the water.
+modified: [CLS] scotch railoid is then able to pull the barge along, and the barge is able to move with the current of the water. [SEP]
+
+original:It is the motivation to eat; the desire to satisfy hunger.
+modified: [CLS] it encompasses the solution to eat ; the desire to decrease hunger. [SEP]
+
+original:Aperitifs are drinks that are usually served before a meal.
+modified: [CLS] aperitifs are components that are formally served against a meal. [SEP]
+
+original:Armrests are important for providing comfort and support to the arms of a person sitting in a chair.
+modified: [CLS]llisulators are important for providing comfort and support to the arms of a person sitting in a mausoleum. [SEP]
+
+original:Many modern anoraks feature stylish designs and bright colors, and they can be found in a variety of lengths and styles.
+modified: [CLS] semi modern anoralars feature stylish designs and bright colors, and artifacts can be found in a variety of lengths and styles. [SEP]
+
+original:Birdcages are often decorated with colorful toys, plants, and perches to keep the birds entertained and stimulated.
+modified: [CLS] trancays are often rigged with colorful toys, plants, and perches to keep the birds entertained and stimulated. [SEP]
+
+original:In the United States, aperitifs are becoming increasingly popular.
+modified: [CLS] amidst the uniteddh, aperitifs are becoming increasingly suspect. [SEP]
+
+original:It involves taking a small sample of tissue from the body for examination under a microscope.
+modified: [CLS] it facilitates registering a small sample of skins from the body for examination under a microscope. [SEP]
+
+original:This is especially true if you are working from home, as a basement can provide a quiet and private space to work.
+modified: [CLS] logging is especially true if you are isolated from home, as a contract can provide a quiet and private space to work. [SEP]
+
+original:Banks also provide loans to individuals and businesses, allowing them to purchase homes, cars, and other goods.
+modified: [CLS] banks also provide insurance to convicts and manufactures, allowing them to purchase homes, cars, and other goods. [SEP]
+
+original:Today, they are used more for deterrence and as a show of force.
+modified: [CLS] occasionally, they are applied more for deternts and as a show of force. [SEP]
+
+original:Field events involve jumping and throwing.
+modified: [CLS] spectator centers encourage jumping and throwing. [SEP]
+
+original:It has also been used to study the impact of globalization, the effects of technology on society, and the changing nature of gender roles.
+modified: [CLS] it also already been used to study the product of globalization, the effects of technology on society, and the changing nature of gender roles. [SEP]
+
+original:Employers and employees may use bargaining to negotiate the terms of their employment.
+modified: [CLS] patients and specialists continually use bargaining to negotiate the terms of their employment. [SEP]
+
+original:It was a three-wheeled vehicle powered by a single-cylinder engine.
+modified: [CLS] it was a rotary - wheeled vehicle inspired by a single - cylinder engine. [SEP]
+
+original:Apologies can be powerful tools to help heal relationships and to restore trust.
+modified: [CLS] reapers can be provides tools to help [unused684] relationships and to restore trust. [SEP]
+
+original:Angina is a condition that causes chest pain or discomfort due to inadequate blood flow to the heart.
+modified: [CLS] angina is a condition that causes chest sectional or [unused221] due to erratic blood flow to the heart. [SEP]
+
+original:Baritones are often the key to a successful a cappella performance, as they provide the main melody and support the other singers.
+modified: [CLS] aggregate matrices are theoretically the key to a successful a cappella performance, as they provide the main melody and support the other singers. [SEP]
+
+original:When making an acquisition, it is important to conduct due diligence.
+modified: [CLS] through maintaining an acquisition, it is important to conduct due dillence. [SEP]
+
+original:The Alpenhorn was traditionally played by blowing into the mouthpiece and using the right hand to cover and uncover the bell, creating a distinct and recognizable sound.
+modified: [CLS] faux alradhorn was traditionally played by blowing into the mouthpiece and using the right hand to cover and stretch the bell, creating a distinct and recognizable sound. [SEP]
+
+original:It is important to choose the right type of birdcage for your bird, as this will ensure that it is happy and healthy.
+modified: [CLS] it creates interesting to choose the right type of bird kedge for your bird, as this will ensure that it is happy and healthy. [SEP]
+
+original:This means having all of the necessary documents and materials that are needed for the meeting.
+modified: [CLS] networking means considering all of the cellular documents and materials that are needed for the meeting. [SEP]
+
+original:Ruth’s baseball career began in 1914, when he signed with the Baltimore Orioles of the International League.
+modified: [CLS] mcleod nominate s competitive career began in 1914, when he signed with the baltimore orioles of the international league. [SEP]
+
+original:Archives are essential for the study of history.
+modified: [CLS] monasteries appear essential from the study of history. [SEP]
+
+original:Bargaining can also be used to resolve conflicts between countries or between different political factions.
+modified: [CLS] blinds can also be devised to resolve conflicts between countries or between different [unused708] factions. [SEP]
+
+original:Asparagus is a popular vegetable that is enjoyed in many different ways.
+modified: [CLS] asparago boasts a popularlty that is enjoyed in many different ways. [SEP]
+
+original:Biden was well-liked by voters, and his presence on the ticket helped Obama win the election.
+modified: [CLS] katzland was well - liked by voters, and his presence via the ticket helped obama win the election. [SEP]
+
+original:Archaeology is an important field of study because it helps us to understand how our ancestors lived and how our societies have evolved over time.
+modified: [CLS] chemistry is an important field of study because it offers us to understand how our differences lived and how our societies have evolved over time. [SEP]
+
+original:Class D airspace is used for VFR operations and is typically found around smaller airports.
+modified: [CLS] rocket d75 is essential for vfr operations and is typically found around smaller airports. [SEP]
+
+original:Asymmetry occurs when two or more objects are not identical in shape, size, and orientation.
+modified: [CLS] aschametry originated when two or more objects are not specified in shape, size, and orientation. [SEP]
+
+original:It can also be used to indicate that someone is taking action in order to benefit another person or organization.
+modified: [CLS] it is normally be used to indicate that someone is taking action in order to benefit another user or organization. [SEP]
+
+original:Mental adjustment involves adapting to changes in our mental environment, such as dealing with stress, managing anxiety, or coping with depression.
+modified: [CLS] alcohol consistently avoids adapting to changes in our mental environment, such as dealing with stress, managing anxiety, or coping with depression. [SEP]
+
+original:Asphalt is a durable material that is resistant to wear and tear, making it an ideal material for roads and pavements.
+modified: [CLS] wax is a proprietary tool that is resistant to wear and tear, making it an ideal material for roads and pavements. [SEP]
+
+original:It can give us the strength to keep going when times are tough.
+modified: [CLS] shannon acts between us the strength to keep going when times are tough. [SEP]
+
+original:This is especially important in classical music, where the accompanist is often responsible for setting the tempo and the dynamics of the piece.
+modified: [CLS] neglect is especially important in classical music, where the accomplitcal is often responsible for setting the tempo and the dynamics of the piece. [SEP]
+
+original:If the court reverses the lower court’s decision, the appellate court’s decision is binding on the lower court and must be followed.
+modified: [CLS] should the court reverses the lower court " s decision, the appellate court [unused762] s decision is binding on the lower court and must be followed. [SEP]
+
+original:Despite its mysterious nature, the antling has become a popular creature in popular culture.
+modified: [CLS] within extremely mysterious nature, the antlingial become a popular creature in popular culture. [SEP]
+
+original:It can also help to reduce the risk of infection, as it is designed to flush away any bacteria or germs that may be present.
+modified: [CLS] it ought also help to reduce the risk of [unused136], as it is designed to flush away any bacteria orlearms that may be present. [SEP]
+
+original:It is a source of resilience and joy.
+modified: [CLS] it explores simultaneously source of resuelence and joy. [SEP]
+
+original:Before undergoing a biopsy, it is important to discuss the risks and benefits with your doctor.
+modified: [CLS] already delivering a biopsy, it is mandatory to discuss the risks and benefits with your doctor. [SEP]
+
+original:It is a must-have item for anyone looking to enjoy a relaxing and comfortable experience in the bathroom.
+modified: [CLS] it should probably must - weigh item for anyone looking to enjoy a relaxing and comfortable experience in the bathroom. [SEP]
+
+original:However, physical beauty is only one aspect of beauty and does not always accurately reflect what is truly beautiful.
+modified: [CLS] lately, physical beauty is hardly one aspect of beauty and does not always help reflect what is truly beautiful. [SEP]
+
+original:It can be a way to help others, to make a positive impact, and to make a difference in the lives of those around us.
+modified: [CLS] it acts ber way to help conserve, to make a positive impact, and to make a difference in the lives of those around us. [SEP]
+
+original:Additionally, the construction of a barrage can be costly and require a significant amount of time and resources.
+modified: [CLS] concurrently, the construction of a barrageuld be costly and require a significant amount of time and attention. [SEP]
+
+original:Accounting is a broad field that encompasses many different roles and responsibilities.
+modified: [CLS] screening is a broad field that covers many different areas and responsibilities. [SEP]
+
+original:Analogue and digital are two different types of technology that are used to represent information, such as audio, video, and data.
+modified: [CLS] ultrasound and dorian explores two different types of technology that are used to represent information, such as audio, video, and data. [SEP]
+
+original:Whether you’re looking for a place to relax and enjoy nature, or you’re looking to explore its unique culture, Arkansas has something for everyone.
+modified: [CLS]om youʼ re looking for a place to relax and enjoy nature, or you ¨ re looking to explore its unique culture, arkansas has something for everyone. [SEP]
+
+original:Microscopic anatomy involves the study of the structure of cells, tissues, and organs at a microscopic level.
+modified: [CLS] artistic realism involves the study of the structure of minerals, tissues, and organs at a microscopic level. [SEP]
+
+original:Beauty is also found in the inner qualities of a person.
+modified: [CLS] tolerance is also located in the inner membrane of a person. [SEP]
+
+original:It is important to be aware of the expectations of the audience in order to deliver a successful performance or presentation.
+modified: [CLS] it is thought to be rid of the expectations of the filmmaker in order to deliver a successful performance or presentation. [SEP]
+
+original:Attraction can be physical, emotional, or intellectual, and each type can be just as powerful as the other.
+modified: [CLS] treatments can be morphological, emotional, or intellectual, and each organism can be just as powerful as the other. [SEP]
+
+original:Blisters are small pockets of fluid that form on the skin’s surface.
+modified: [CLS] dethingers are small pockets of fluid that form on the skinbush s surface. [SEP]
+
+original:It is a way of organizing and planning for the future and helps to ensure that goals are achieved.
+modified: [CLS] it is a way of organizing and planning for the future and brings to consider that goals are paramount. [SEP]
+
+original:Positive beliefs can give us hope and motivate us to take action.
+modified: [CLS] spiked drugs can give us hope and motivite us to take action. [SEP]
+
+original:These tests are designed to ensure that the plane is safe and reliable.
+modified: [CLS] chemical tests can performed to ensure that the plane is safe and reliable. [SEP]
+
+original:No matter what our backgrounds are, they are an essential part of who we are and they can be a source of both conflict and understanding.
+modified: [CLS] nomiform our solutions are, they are an essential part of who we are and they can be a source of both conflict and understanding. [SEP]
+
+original:Wooden cages are usually heavier than metal cages, and they can be more difficult to clean.
+modified: [CLS] tape agents are usually heavier than metalworking, and they can be more difficult to clean. [SEP]
+
+original:Eating a balanced diet that is rich in fruits and vegetables can help to improve alertness.
+modified: [CLS] exposing a balanced diet that is rich in fruits and angles can help to improve alert responses. [SEP]
+
+original:It is seen in the way that we interact with others and the way that we view the world around us.
+modified: [CLS] it occurs seen in the way that we coincide with others and the way that we travel the world around us. [SEP]
+
+original:Anglers should also be aware of local regulations regarding the use of bait, as these can help ensure the health of the fish population.
+modified: [CLS] civilian walkers should also be aware of local regulations regarding the use of bait, as investigations can help ensure the health of the fish population. [SEP]
+
+original:In the past, clothing was mainly used for protection from the elements and to show social status.
+modified: [CLS] starting the 1950s, opium was mainly used for protection from the elements and to show social status. [SEP]
+
