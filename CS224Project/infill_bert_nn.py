@@ -7,8 +7,8 @@ from matplotlib import pyplot as plt
 import requests
 import os
 from transformers import AutoModelForSequenceClassification
-from transformers import TrainingArguments, Trainer
-from transformers import TFAutoModelForMaskedLM, AutoModelForCausalLM
+from transformers import TrainingArguments, Trainer, TFTrainer, TFTrainingArguments
+from transformers import TFAutoModelForMaskedLM, AutoModelForCausalLM, AutoModelForMaskedLM
 from transformers import AutoTokenizer
 import evaluate
 # from nltk.corpus import stopwords
@@ -21,6 +21,7 @@ BASE_MODEL_NAME = 'bert-base-uncased'
 FT_MODEL_NAME = "distilbert-base-uncased"
 RANK_CUTTOFF = 25
 NUM_MASK = 3
+EARLY_STOP = 10
 
 BASE_MODEL = AutoModelForCausalLM.from_pretrained(BASE_MODEL_NAME)
 FT_MODEL = TFAutoModelForMaskedLM.from_pretrained(FT_MODEL_NAME)
@@ -132,7 +133,7 @@ def mask_ith_word (sentence, i):
 def get_mask_indicies (encoded_sentence, tf = False):
   sentence_perplexity, prob_each_index = compute_perplexity(encoded_sentence, tf = tf)
   indexes_by_prob = [[p,i] for i,p in enumerate(prob_each_index)]
-  indexes_by_prob = indexes_by_prob [1: len(indexes_by_prob)]
+  indexes_by_prob = indexes_by_prob [1: len(indexes_by_prob) - 1]
   indexes_by_prob = sorted(indexes_by_prob)
 
   return [tu[1] for tu in indexes_by_prob[:NUM_MASK]]
@@ -156,17 +157,19 @@ def get_most_similar_token (tokens, original_encoding, index):
         top_token = token
    return top_token
 
-class FinetunedBartTrainer(Trainer):
+class FinetunedBartTrainer(TFTrainer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
     def compute_loss(self, model, inputs):
-       cross_entropy_loss, logits = model(
+      cross_entropy_loss, logits = model(
                 input_ids=inputs["input_ids"],
                 labels=inputs["labels"],
                 attention_mask=inputs["attention_mask"]
         )
+      for single_logits in logits:
+        continue
        
-       return 0
+      return cross_entropy_loss
 class BERTDataset(Dataset):
   def __init__(self, encodings, labels):
       self.encodings = encodings
@@ -193,22 +196,22 @@ def fine_tune (model, training_data):
   inputs = prep_data_set (training_data)
   print (inputs)
    
-  # training_args = TrainingArguments(
-  #       output_dir="test_trainer", 
-  #       evaluation_strategy="epoch",
-  #       num_train_epochs = 3,
-  #       gradient_accumulation_steps = 1,
-  #       per_device_train_batch_size = 8,
-  #       learning_rate = 5e-5,
-  #       logging_steps = 400
-  #   )
+  training_args = TFTrainingArguments(
+        output_dir="test_trainer", 
+        evaluation_strategy="epoch",
+        num_train_epochs = 3,
+        gradient_accumulation_steps = 1,
+        per_device_train_batch_size = 8,
+        learning_rate = 5e-5,
+        logging_steps = 400
+    )
    
-  # trainer = FinetunedBartTrainer(
-  #   model=model,
-  #   args=training_args,
-  #   train_dataset=inputs
-  #  )
-  # trainer.train()
+  trainer = FinetunedBartTrainer(
+    model=model,
+    args=training_args,
+    train_dataset=inputs
+   )
+  trainer.train()
   
 
 if __name__ == "__main__":
@@ -220,46 +223,27 @@ if __name__ == "__main__":
 
   old_new_dict = {}
 
-  for i, sentence in enumerate(validation_data):
-    print (sentence)
+  for index, sentence in enumerate(validation_data):
     encoding = BASE_TOKENIZER (sentence, return_tensors = 'pt')['input_ids']
     mask_indicies = get_mask_indicies (encoding[0])
     inputs = FT_TOKENIZER (sentence, return_tensors="np")
-    print (inputs)
+    new_sentence = "" + sentence
     for i in range (NUM_MASK):
+      if (i >= len(mask_indicies) or mask_indicies[i] >= len(inputs['input_ids'][0])):
+        continue
       inputs['input_ids'][0][mask_indicies[i]] = FT_TOKENIZER.mask_token_id
       token_logits = FT_MODEL(**inputs).logits
       mask_token_index = mask_indicies[i]
       mask_token_logits = token_logits[0, mask_token_index, :]
       top_tokens = np.argsort(-mask_token_logits)[:RANK_CUTTOFF].tolist()
       top_token = get_most_similar_token (top_tokens, inputs['input_ids'][0], mask_indicies[i])
-      inputs['input_ids'][0][ mask_indicies[i]] = top_token
+      inputs['input_ids'][0][mask_indicies[i]] = top_token
       new_sentence = FT_TOKENIZER.decode(inputs['input_ids'][0])
-      print (new_sentence)
+    with open('fine_tuned_sentences.txt', 'a') as f:
+      print(f"original:{sentence}\nmodified: {new_sentence}\n", file=f)
 
-
-
-
-    # masked_sentence = mask_ith_word (new_sentence, mask_indicies[i])
-    # inputs = TOKENIZER (masked_sentence, return_tensors="np")
-
-    # top_token = np.argsort(-mask_token_logits)[0]
-    # inputs['input_ids'][0][ mask_indicies[i]] = top_token
-    # new_sentence = TOKENIZER.decode(inputs['input_ids'][0])
-    # print (new_sentence)
-    # new_sentence = masked_sentence.replace(TOKENIZER.mask_token, TOKENIZER.decode([top_token]))
-    # print (new_sentence)
-
-
-
-  # text = mask_ith_word(training_data[0], 0)
-
-  # inputs = TOKENIZER (text, return_tensors="np")
-  # token_logits = BASE_MODEL(**inputs).logits
-  # mask_token_index = np.argwhere(inputs["input_ids"] == TOKENIZER .mask_token_id)[0, 1]
-  # mask_token_logits = token_logits[0, mask_token_index, :]
-
-  # top_tokens = np.argsort(-mask_token_logits)[:RANK_CUTTOFF].tolist()
-
-  # for token in top_tokens:
-  #     print(f">>> {text.replace(TOKENIZER .mask_token, TOKENIZER .decode([token]))}")
+    old_new_dict [sentence] = new_sentence
+    if index >= EARLY_STOP:
+      break
+  # with open('fine_tuned_sentences.txt', 'w') as f:
+  #   print(old_new_dict, file=f)

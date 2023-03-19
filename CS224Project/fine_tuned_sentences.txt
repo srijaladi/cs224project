@@ -1,0 +1,34 @@
+{'This includes studying, attending classes, and completing assignments.': '[CLS] enrichment includes preparation, preparing classes, and completing assignments. [SEP]', 'The bicycle has had a profound impact on the world, both culturally and economically.': '[CLS] american bicycle has acquired a profound impact on the world, both culturally and strategically. [SEP]', 'Beetroot is a very versatile vegetable, and it can be used in many different ways.': '[CLS] sistross is a very delicious vegetable, and it can be used in many different ways. [SEP]', 'Analgesia is an important part of providing quality medical care, and it is important to discuss all available options with your doctor to ensure that you receive the best care possible.': '[CLS] analedia is an important part of measuring quality medical care, and it is relevant to discuss all available options with your doctor to ensure that you receive the best care possible. [SEP]', 'By taking steps to reduce air pollution, we can help protect our health, the environment, and the economy.': '[CLS] including taking steps to reduce air raids, we can help protect our health, the countryside, and the economy. [SEP]', 'In addition, there are a variety of different lures and baits that can be used to target bass, such as crankbaits, jigs, spinnerbaits, and soft plastics.': '[CLS] since addition, there are a variety of different poisons and baits that can be tuned to target bass, such as crankbaits, jigs, spinnerbaits, and soft plastics. [SEP]', 'With the right backup system in place, you can rest assured that your data is safe and secure, no matter what happens.': '[CLS] secure upper right backup system in place, you can rest assured that your data is safe and secure, no matter circumstances happens. [SEP]', 'This is based on the idea that resources are best used when everyone has access to them, rather than when they are hoarded by a small group.': '[CLS] foraging is based on the idea that resources are individually accessed when everyone has access to them, rather than when they are hoarded by a small group. [SEP]', 'Barbeque is often associated with outdoor cooking and social gatherings.': '[CLS] malbea is often associated with outdoor cooking and social pursuits. [SEP]', 'It provides students with the necessary skills and knowledge to enter the workforce and can open the door to higher-paying jobs and advancement opportunities.': '[CLS] it recruits recruits with the necessary skills and knowledge to enter the workforce and can open the door to short - paying jobs and advancement opportunities. [SEP]', 'Administrators must be able to handle personnel issues, motivate and inspire employees, and identify and resolve any problems that may arise.': '[CLS] agencies thus be able to handle urgent issues, motivate and inspire employees, and identify and resolve any problems that may arise. [SEP]'}
+original:This includes studying, attending classes, and completing assignments.
+modified: [CLS] enrichment includes preparation, preparing classes, and completing assignments. [SEP]
+
+original:The bicycle has had a profound impact on the world, both culturally and economically.
+modified: [CLS] american bicycle has acquired a profound impact on the world, both culturally and strategically. [SEP]
+
+original:Beetroot is a very versatile vegetable, and it can be used in many different ways.
+modified: [CLS] sistross is a very delicious vegetable, and it can be used in many different ways. [SEP]
+
+original:Analgesia is an important part of providing quality medical care, and it is important to discuss all available options with your doctor to ensure that you receive the best care possible.
+modified: [CLS] analedia is an important part of measuring quality medical care, and it is relevant to discuss all available options with your doctor to ensure that you receive the best care possible. [SEP]
+
+original:By taking steps to reduce air pollution, we can help protect our health, the environment, and the economy.
+modified: [CLS] including taking steps to reduce air raids, we can help protect our health, the countryside, and the economy. [SEP]
+
+original:In addition, there are a variety of different lures and baits that can be used to target bass, such as crankbaits, jigs, spinnerbaits, and soft plastics.
+modified: [CLS] since addition, there are a variety of different poisons and baits that can be tuned to target bass, such as crankbaits, jigs, spinnerbaits, and soft plastics. [SEP]
+
+original:With the right backup system in place, you can rest assured that your data is safe and secure, no matter what happens.
+modified: [CLS] secure upper right backup system in place, you can rest assured that your data is safe and secure, no matter circumstances happens. [SEP]
+
+original:This is based on the idea that resources are best used when everyone has access to them, rather than when they are hoarded by a small group.
+modified: [CLS] foraging is based on the idea that resources are individually accessed when everyone has access to them, rather than when they are hoarded by a small group. [SEP]
+
+original:Barbeque is often associated with outdoor cooking and social gatherings.
+modified: [CLS] malbea is often associated with outdoor cooking and social pursuits. [SEP]
+
+original:It provides students with the necessary skills and knowledge to enter the workforce and can open the door to higher-paying jobs and advancement opportunities.
+modified: [CLS] it recruits recruits with the necessary skills and knowledge to enter the workforce and can open the door to short - paying jobs and advancement opportunities. [SEP]
+
+original:Administrators must be able to handle personnel issues, motivate and inspire employees, and identify and resolve any problems that may arise.
+modified: [CLS] agencies thus be able to handle urgent issues, motivate and inspire employees, and identify and resolve any problems that may arise. [SEP]
+
