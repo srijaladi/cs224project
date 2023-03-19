@@ -107,6 +107,7 @@ def get_prob(model, encoded_sentence):
     
     return total_log_prob, all_probs
 
+# REMOVE STOP WORDS
 def compute_perplexity(full_sentence, encoded_sentence):
     base_log_prob, base_each_prob = get_prob(BASE_MODEL, encoded_sentence)
     # print(base_log_prob)
@@ -126,9 +127,30 @@ def get_mask_indicies (full_sentence, encoded_sentence):
   indexes_by_prob = [[p,i] for i,p in enumerate(prob_each_index)]
   indexes_by_prob = sorted(indexes_by_prob)
 
-  print (indexes_by_prob)
-
   return [tu[1] for tu in indexes_by_prob[:NUM_MASK]]
+
+def similarity_score_single(embed1, embed2):
+    norm1 = np.linalg.norm(embed1)
+    norm2 = np.linalg.norm(embed2)
+    numerator = np.dot(embed1, embed2)
+    denominator = norm1 * norm2
+    return numerator/denominator
+
+def get_most_similar_token (tokens, original_encoding, index):
+   max_sim_score = 0
+   top_token = None
+   for token in tokens:
+      new_encoding = [i for i in original_encoding]
+      new_encoding [index] = token
+      sim_score = similarity_score_single(new_encoding, original_encoding)
+      if sim_score > max_sim_score:
+        sim_score = max_sim_score
+        top_token = token
+   return top_token
+
+def fine_tune ():
+   return 
+  
 
 if __name__ == "__main__":
   print ("\n\n\n BEGINGING RUN\n")
@@ -136,21 +158,33 @@ if __name__ == "__main__":
 
   sentence = validation_data[0]
   print (sentence)
-  encoding = TOKENIZER (sentence, return_tensors = 'np')['input_ids'][0]
-  mask_indicies = get_mask_indicies (sentence, encoding)
-  new_sentence = "" + sentence
+  encoding = TOKENIZER (sentence, return_tensors = 'pt')['input_ids']
+  mask_indicies = get_mask_indicies (sentence, encoding[0])
+  inputs = TOKENIZER (sentence, return_tensors="np")
   for i in range (NUM_MASK):
-    new_encoding = TOKENIZER (new_sentence, return_tensors = 'np')['input_ids']
-    masked_sentence = mask_ith_word (new_sentence, mask_indicies[i])
-    print (new_encoding)
-    inputs = TOKENIZER (masked_sentence, return_tensors="np")
+    inputs['input_ids'][0][ mask_indicies[i]] = TOKENIZER.mask_token_id
     token_logits = BASE_MODEL(**inputs).logits
-    mask_token_index = np.argwhere(inputs["input_ids"] == TOKENIZER .mask_token_id)[0, 1]
-    print ("MASKED TOKEN", mask_token_index, mask_indicies[i])
+    mask_token_index = mask_indicies[i]
     mask_token_logits = token_logits[0, mask_token_index, :]
-    top_token = np.argsort(-mask_token_logits)[0]
-    new_sentence = masked_sentence.replace(TOKENIZER .mask_token, TOKENIZER .decode([top_token]))
+    top_tokens = np.argsort(-mask_token_logits)[:RANK_CUTTOFF].tolist()
+    top_token = get_most_similar_token (top_tokens, inputs['input_ids'][0], mask_indicies[i])
+    inputs['input_ids'][0][ mask_indicies[i]] = top_token
+    new_sentence = TOKENIZER.decode(inputs['input_ids'][0])
     print (new_sentence)
+
+
+
+
+
+    # masked_sentence = mask_ith_word (new_sentence, mask_indicies[i])
+    # inputs = TOKENIZER (masked_sentence, return_tensors="np")
+
+    # top_token = np.argsort(-mask_token_logits)[0]
+    # inputs['input_ids'][0][ mask_indicies[i]] = top_token
+    # new_sentence = TOKENIZER.decode(inputs['input_ids'][0])
+    # print (new_sentence)
+    # new_sentence = masked_sentence.replace(TOKENIZER.mask_token, TOKENIZER.decode([top_token]))
+    # print (new_sentence)
 
 
 
